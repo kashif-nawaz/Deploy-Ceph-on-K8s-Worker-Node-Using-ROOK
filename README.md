@@ -1,13 +1,13 @@
 # Deploy Ceph on K8s Worker Nodes Using ROOK
 
 ## Problem Statment
-* K8s is becoming a de-fecto standard to host Containerized Network Function (CNFs) in telecom / edge cloud and to host IT applications in IT Pvt Cloud.
+* K8s is becoming a de-fecto standard to host Containerized Network Function (CNFs) in telecom / edge cloud.
 * Application data storage should be accessible in case if worker node is broken or application/ container is broken.
-* It implies that data storage should be central so that failure of any component should not impact its availability, but data storage should be distributed as well for robust access and resiliency. 
+* It implies that data storage should be central so that failure of any component should not impact its availability, but data storage should also be distributed as well for robust access and to achieve resiliency. 
 ## Proposed Solution
 * Ceph is 1st choice when it comes to Software Defined Storage for Telco Cloud Solution.
 * ROOK is K8s operator which provides a very easy methodology to deploy Ceph in K8s Cluster. 
-* Please [watch](https://www.openstack.org/videos/summits/denver-2019/rook-a-new-and-easy-way-to-run-your-ceph-storage-on-kubernetes) to learn more about ROOK or vist ROOK [git hompage](https://github.com/rook/rook)
+* Please [watch video](https://www.openstack.org/videos/summits/denver-2019/rook-a-new-and-easy-way-to-run-your-ceph-storage-on-kubernetes) to learn more about ROOK or vist ROOK [git hompage](https://github.com/rook/rook)
 ## Work Flow
 * Deploy K8s with your preferred tool.
 * Deploy your favourite CNI.
@@ -21,7 +21,7 @@
 ## Implementation Details
 * It is supposed that K8s cluster is running. 
 * If worker nodes are Bare metal, then add the 2nd HDD by following hardware addition/ replacement procedure from respective vendor.
-* If worker nodes are virtual machines, then add the 2nd HDD while creating the VM are it can be done during run time if it's running on KVM (without Openstack).
+* If worker nodes are virtual machines, then add the 2nd HDD while creating the VM or it can be done during run time if it's running on KVM (without Openstack).
 * Get KVM VMs list 
   ```
     sudo virsh list | grep worker
