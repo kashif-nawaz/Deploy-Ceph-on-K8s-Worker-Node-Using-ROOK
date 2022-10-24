@@ -221,6 +221,7 @@
 * Login to Ceph toolbox and verify of metadata and data pools are created 
 
   ```
+  kubectl -n rook-ceph exec -it deploy/rook-ceph-tools -- bash
   [rook@rook-ceph-tools-6f7bb4b67-gvvrt /]$ ceph fs ls
   name: k8sfs, metadata pool: k8sfs-metadata, data pools: [k8sfs-replicated ]
 
