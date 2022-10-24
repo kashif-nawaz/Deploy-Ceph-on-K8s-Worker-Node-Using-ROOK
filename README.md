@@ -10,7 +10,7 @@
 * Please [watch video](https://www.openstack.org/videos/summits/denver-2019/rook-a-new-and-easy-way-to-run-your-ceph-storage-on-kubernetes) to learn more about ROOK or vist ROOK [git hompage](https://github.com/rook/rook)
 ## Work Flow
 * Deploy K8s with your preferred tool.
-* Deploy your favourite CNI (in my case I am using Juniper Network Cloud Native Contrail Networking CN2 Software Defined Controller)
+* Deploy your favourite CNI (in my case I am using Juniper Networks Cloud Native Contrail Networking aka CN2 Software Defined Controller)
 * Ensure that k8s worker nodes; intended to have Ceph OSDs should have spare hard available (unpartationed and unformatted).
 * Clone the ROOK Git repo and amend  the relevant files it as per your setup. 
 * Deploy the ROOK. 
