@@ -1,8 +1,8 @@
 # Deploy Ceph on K8s Worker Nodes Using ROOK
 
 ## Problem Statment
-* K8s is becoming a de-fecto standard to host Containerized Network Function (CNFs) in telecom / edge cloud.
-* Application data storage should be accessible in case if worker node is broken or application/ container is broken.
+* K8s is becoming a de-fecto standard to host Containerized Network Function (CNFs) in teleco / edge cloud.
+* Application data storage should be accessible in case if a worker node is broken or application/ container is broken.
 * It implies that data storage should be central so that failure of any component should not impact its availability, but data storage should also be distributed as well for robust access and to achieve resiliency. 
 ## Proposed Solution
 * Ceph is 1st choice when it comes to Software Defined Storage for Telco Cloud Solution.
@@ -11,17 +11,18 @@
 ## Work Flow
 * Deploy K8s with your preferred tool.
 * Deploy your favourite CNI.
-* Ensure that k8s worker nodes intended to have Ceph OSDs should have spare hard available (unpartationed and unformatted).
+* Ensure that k8s worker nodes; intended to have Ceph OSDs should have spare hard available (unpartationed and unformatted).
 * Clone the ROOK Git repo and amend  the relevant files it as per your setup. 
 * Deploy the ROOK. 
+* Create Ceph (shared file syste, Block or object storage) as per use case requriments. 
 * Create Storage Class (SC).
 * Create the Persistent Volume (PV). 
 * Create the Persistent Volume Claim (PVC).
-* Create POD to use already created PVC.
+* Create a POD to use already created PVC.
 ## Implementation Details
 * It is supposed that K8s cluster is running. 
 * If worker nodes are Bare metal, then add the 2nd HDD by following hardware addition/ replacement procedure from respective vendor.
-* If worker nodes are virtual machines, then add the 2nd HDD while creating the VM or it can be done during run time if it's running on KVM (without Openstack).
+* If worker nodes are virtual machines, then add the 2nd HDD while creating the VM or it can be added during run time.
 * Get KVM VMs list 
   ```
     sudo virsh list | grep worker
