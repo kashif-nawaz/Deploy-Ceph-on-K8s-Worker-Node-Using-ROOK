@@ -16,8 +16,7 @@
 * Deploy the ROOK. 
 * Create Ceph (shared file syste, Block or object storage) as per use case requriments. 
 * Create Storage Class (SC).
-* Create the Persistent Volume (PV). 
-* Create the Persistent Volume Claim (PVC).
+* Create the Persistent Volume Claim (PVC) and Persistent Volume (PV) will be created dynamically.
 * Create a POD to use already created PVC.
 ## Implementation Details
 * It is supposed that K8s cluster is running. 
